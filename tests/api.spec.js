@@ -7,7 +7,7 @@ let bookingId;
 let authToken;
 
 // test.describe.serial чтобы тесты шли по порядку
-test.describe.serial('CRUD тесты для Restful-booker', () => {
+test.describe.serial('@api CRUD тесты для Restful-booker', () => {
 
     const bookingData = {
         firstname: "Ivan",
@@ -39,7 +39,7 @@ test.describe.serial('CRUD тесты для Restful-booker', () => {
     });
 
     // 2. READ (GET)
-    test('2. Получение информации о бронировании', async ({ request }) => {
+    test('@api 2. Получение информации о бронировании', async ({ request }) => {
         // Используем ID из первого теста
         const response = await request.get(`${BASE_URL}/booking/${bookingId}`);
 
@@ -52,7 +52,7 @@ test.describe.serial('CRUD тесты для Restful-booker', () => {
     });
 
     // 3. UPDATE (PUT)
-    test('3. Обновление бронирования', async ({ request }) => {
+    test('@api 3. Обновление бронирования', async ({ request }) => {
         // Сначала получаем токен
         const authResponse = await request.post(`${BASE_URL}/auth`, {
             data: { username: "admin", password: "password123" }
@@ -84,7 +84,7 @@ test.describe.serial('CRUD тесты для Restful-booker', () => {
     });
 
     // 4. DELETE
-    test('4. Удаление бронирования', async ({ request }) => {
+    test('@api 4. Удаление бронирования', async ({ request }) => {
         // Отправляем DELETE запрос (используем токен из 3-го теста)
         const response = await request.delete(`${BASE_URL}/booking/${bookingId}`, {
             headers: {

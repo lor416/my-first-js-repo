@@ -8,7 +8,7 @@ const { CheckoutStepOnePage } = require('./pages/CheckoutStepOnePage');
 const { CheckoutStepTwoPage } = require('./pages/CheckoutStepTwoPage');
 const { CheckoutCompletePage } = require('./pages/CheckoutCompletePage');
 
-test('E2E: Покупка самого дорогого товара (POM)', async ({ page }) => {
+test('@ui E2E: Покупка самого дорогого товара (POM)', async ({ page }) => {
     // 1. Инициализируем все страницы
     const loginPage = new LoginPage(page);
     const inventoryPage = new InventoryPage(page);
